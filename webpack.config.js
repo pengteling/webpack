@@ -10,9 +10,10 @@ module.exports={
     path:path.resolve(__dirname, "./dist/js"),
     filename:"[name]-[chunkhash].js"
   },
-  plugin:[
+  plugins:[
     new HtmlWebpackPlugin({
-      
+      filename:"index.html",
+      template:"index.html"
     })
   ]
 }
