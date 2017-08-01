@@ -1,0 +1,27 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "webpack": "^3.4.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "style-loader": "^0.18.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --display-modules --progress --colors --display-reasons"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pengteling/webpack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pengteling/webpack/issues"
+  },
+  "homepage": "https://github.com/pengteling/webpack#readme"
+}

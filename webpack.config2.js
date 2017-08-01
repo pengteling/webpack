@@ -1,12 +1,9 @@
 //commonJS
 var path=require("path");
 module.exports={
-  entry:{
-    "a":"./src/js/a.js",
-    "c":"./src/js/c.js"
-  },
+  entry:"./src/js/a.js",
   output:{
     path:path.resolve(__dirname, "./dist/js"),
-    filename:"[name]-[chunkhash].js"
+    filename:"bundle2.js"
   }
 }
