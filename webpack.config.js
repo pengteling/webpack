@@ -7,13 +7,23 @@ module.exports={
     "c":"./src/js/c.js"
   },
   output:{
-    path:path.resolve(__dirname, "./dist/js"),
-    filename:"[name]-[chunkhash].js"
+    path:path.resolve(__dirname, "./dist"),
+    filename:"js/[name]-[chunkhash].js",
+    publicPath:"http://www.cdn.com"
   },
   plugins:[
     new HtmlWebpackPlugin({
+      title:"HtmlWebpackPlugin title",
+      fy:"fanyi",
       filename:"index.html",
-      template:"index.html"
+      template:"index.html",
+      inject:false,
+      hash:true,
+      minify:{
+        collapseWhitespace:true,
+        removeComments:true
+      }
+    
     })
   ]
 }
