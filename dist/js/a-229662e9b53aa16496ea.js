@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>HtmlWebpackPlugin title</title>
-  <script>
-    /******/ (function(modules) { // webpackBootstrap
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -116,8 +108,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/.npminstall/css-loader/0.28.4/css-loader/index.js??ref--0-1!./style.css", function() {
-			var newContent = require("!!../../node_modules/.npminstall/css-loader/0.28.4/css-loader/index.js??ref--0-1!./style.css");
+		module.hot.accept("!!../../node_modules/.npminstall/css-loader/0.28.4/css-loader/index.js!./style.css", function() {
+			var newContent = require("!!../../node_modules/.npminstall/css-loader/0.28.4/css-loader/index.js!./style.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -678,15 +670,3 @@ module.exports = function (css) {
 
 /***/ })
 /******/ ]);
-  </script>
-
-</head>
-<body>
-  
-    
-  
-
-
-
-</body>
-</html>

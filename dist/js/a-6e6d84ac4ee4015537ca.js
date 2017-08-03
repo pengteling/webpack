@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>HtmlWebpackPlugin title</title>
-  <script>
-    /******/ (function(modules) { // webpackBootstrap
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -77,7 +69,6 @@
 
 var b = __webpack_require__(1);
 //require("style-loader!css-loader!./../css/style.css");
-//require("style-loader!css-loader!./../css/style.css");
 __webpack_require__(2);
 function a(){
   console.log("a");
@@ -110,14 +101,14 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(5)(content, options);
+var update = __webpack_require__(4)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/.npminstall/css-loader/0.28.4/css-loader/index.js??ref--0-1!./style.css", function() {
-			var newContent = require("!!../../node_modules/.npminstall/css-loader/0.28.4/css-loader/index.js??ref--0-1!./style.css");
+		module.hot.accept("!!../../node_modules/.npminstall/css-loader/0.28.4/css-loader/index.js!../../node_modules/.npminstall/style-loader/0.18.2/style-loader/index.js!../../node_modules/.npminstall/css-loader/0.28.4/css-loader/index.js!./style.css", function() {
+			var newContent = require("!!../../node_modules/.npminstall/css-loader/0.28.4/css-loader/index.js!../../node_modules/.npminstall/style-loader/0.18.2/style-loader/index.js!../../node_modules/.npminstall/css-loader/0.28.4/css-loader/index.js!./style.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -128,102 +119,12 @@ if(false) {
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(4)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "body{\r\n  background: #00f;\r\n}\r\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Unknown word (5:1)\n\n  3 | // load the styles\n  4 | var content = require(\"!!../../node_modules/.npminstall/css-loader/0.28.4/css-loader/index.js!./style.css\");\n> 5 | if(typeof content === 'string') content = [[module.id, content, '']];\n    | ^\n  6 | // Prepare cssTransformation\n  7 | var transform;\n  8 | \n");
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -269,7 +170,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(6);
+var	fixUrls = __webpack_require__(5);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -582,7 +483,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports) {
 
 
@@ -678,15 +579,3 @@ module.exports = function (css) {
 
 /***/ })
 /******/ ]);
-  </script>
-
-</head>
-<body>
-  
-    
-  
-
-
-
-</body>
-</html>
