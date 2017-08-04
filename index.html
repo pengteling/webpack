@@ -4,20 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title><%= htmlWebpackPlugin.options.title %></title>
-  <script>
-    <%= compilation.assets[htmlWebpackPlugin.files.chunks.a.entry.substr(htmlWebpackPlugin.files.publicPath.length)].source()%>
-  </script>
+  <title></title>
 
 </head>
 <body>
-  <%  for (var k in htmlWebpackPlugin.files.chunks){ %>
-    <%if (k!=="a"){%>
-      
-      <script src="<%= htmlWebpackPlugin.files.chunks[k].entry%>"></script>
-    <%}%>
-  <%} %>
-
+  <div id="app"></div>
+  <div class="inner"><img src="./src/images/1.png" alt=""></div>
 
 
 </body>

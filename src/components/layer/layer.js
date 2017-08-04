@@ -1,7 +1,9 @@
 import tpl from "./layer.html";
-export default function layer(){
-  return{
-    name:'layer',
-    tpl : tpl
-  }
+
+import "./layer.less";
+import "./layer.scss";
+
+export default {
+  name:'layer',
+  tpl : tpl
 }

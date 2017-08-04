@@ -1,0 +1,45 @@
+.flex-div{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0.3;
+  filter: alpha(opacity=30)
+}
+html,body,ul,li{
+  padding:0;
+  margin:0
+}
+ul,li{
+  list-style: none;
+}
+body{
+  background-color: red;
+}
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.layer {
+  width: 600px;
+  height: 200px;
+  background-color: green;
+}
+.layer > div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  height: 100px;
+  background: url(../images/1.png);
+}
+.inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+/*# sourceMappingURL=app.css.map*/
