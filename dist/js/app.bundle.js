@@ -81,6 +81,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 window.onload = function () {
   console.log(_layer2.default);
   document.getElementById('app').innerHTML = _layer2.default.tpl;
+  //alert("Test");
+  console.log("Test");
 };
 
 /***/ }),

@@ -29,11 +29,13 @@
     "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "url-loader": "^0.5.9"
+    "url-loader": "^0.5.9",
+    "webpack-dev-server": "^2.6.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --display-modules --progress --colors --display-reasons"
+    "webpack": "webpack --display-modules --progress --colors --display-reasons",
+    "dev":"webpack-dev-server"
   },
   "repository": {
     "type": "git",

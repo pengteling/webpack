@@ -2,6 +2,7 @@
 var path=require("path");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var webpack = require('webpack');
 
 const extractCSS = new ExtractTextPlugin('css/[name]-one.css');
 const extractLESS = new ExtractTextPlugin('css/[name]-two.css');
@@ -153,14 +154,27 @@ module.exports={
     }),
     //new ExtractTextPlugin('style.css')
     new ExtractTextPlugin({
-    filename:  (getPath) => {
-       return getPath('css/[name].css').replace('css/js', 'css');
-    },
-    allChunks: true
-  })
+      filename:  (getPath) => {
+         return getPath('css/[name].css').replace('css/js', 'css');
+      },
+      allChunks: true
+    }),
+    //定义环境 程序中判断
+    new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('development')
+    }),
+    new webpack.HotModuleReplacementPlugin()
   // extractCSS,
   //  extractLESS,
   //  extractSASS
  ],
+ devServer: {
+  //contentBase: path.join(__dirname, "dist"),
+  //compress: true,
+  port: 8080,
+  inline:true,
+  hot:true,
+  host:"0.0.0.0"
+},
  devtool: "source-map"
 }
